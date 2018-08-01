@@ -22,5 +22,6 @@ char				*ft_memchr(void const *src, int c, size_t len);
 void				*ft_memccpy(void *dest, void const *src, int c, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_bzero(void *ptr, size_t size);
+void				*ft_realloc(void *ptr, size_t size);
 
 #endif

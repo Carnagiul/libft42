@@ -17,6 +17,7 @@
 # define ERROR_CUSTOM_MSG 1
 
 int					ft_atoi(char const *str);
+float				ft_atof(char const *str);
 char				*ft_itoa(int nb);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
