@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 20:32:05 by piquerue          #+#    #+#             */
-/*   Updated: 2018/05/10 14:52:17 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 00:01:37 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void				*ft_malloc(size_t size);
 void				ft_exit_error(void);
 void				ft_init_exit_error(void);
 void				free_char_ss(char **str);
+void				*ft_realloc(void *ptr, size_t size);
 
 #endif

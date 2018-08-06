@@ -6,12 +6,12 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 16:01:37 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/06 06:51:47 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 00:02:39 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_LIBFT_H
+# define FT_LIBFT_H
 
 typedef unsigned char		t_char;
 typedef unsigned int		t_uint;

@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/06 02:22:15 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/06 03:30:22 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 00:00:17 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_log		*ft_log_create_info(char *file, t_uint line, char *content)
 {
-	t_log	*log;
+	t_log			*log;
 
 	log = ft_malloc(sizeof(t_log));
 	log->file = ft_strdup(file);
@@ -25,9 +25,10 @@ static t_log		*ft_log_create_info(char *file, t_uint line, char *content)
 	return (log);
 }
 
-static t_log		*ft_log_create_success(char *file, t_uint line, char *content)
+static t_log		*ft_log_create_success(char *file, t_uint line,
+		char *content)
 {
-	t_log	*log;
+	t_log			*log;
 
 	log = ft_malloc(sizeof(t_log));
 	log->file = ft_strdup(file);
@@ -40,7 +41,7 @@ static t_log		*ft_log_create_success(char *file, t_uint line, char *content)
 
 static t_log		*ft_log_create_error(char *file, t_uint line, char *content)
 {
-	t_log	*log;
+	t_log			*log;
 
 	log = ft_malloc(sizeof(t_log));
 	log->file = ft_strdup(file);
@@ -51,7 +52,7 @@ static t_log		*ft_log_create_error(char *file, t_uint line, char *content)
 	return (log);
 }
 
-t_log		*ft_log_create(char *file, t_uint line, t_uint severity,
+t_log				*ft_log_create(char *file, t_uint line, t_uint severity,
 		char *content)
 {
 	t_log	*log;
