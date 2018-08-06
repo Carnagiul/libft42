@@ -6,7 +6,7 @@
 #    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/08/06 06:30:06 by piquerue         ###   ########.fr        #
+#    Updated: 2018/08/06 06:49:07 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ music_end:
 	@say -v thomas Fin de la compilation Merci d\'avoir patienter
 	@killall afplay
 
-.PHONY : all clean fclean re test check display
+.PHONY : all clean fclean re $(NAME)
 
 
 
