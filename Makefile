@@ -6,14 +6,14 @@
 #    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/08/06 06:14:33 by piquerue         ###   ########.fr        #
+#    Updated: 2018/08/06 06:30:06 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CFLAGS = -Wall -Werror -Wextra -Ofast -Wunreachable-code
-
+LIBFT = libft
 C = $(shell find . -type f | grep "\.c")
 COUNT = $(shell find . -type f | grep "\.o" | wc -l)
 COUNT_MAX = $(shell find . -type f | grep "\.c" | wc -l)
