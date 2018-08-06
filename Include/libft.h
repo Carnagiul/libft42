@@ -6,12 +6,17 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 16:01:37 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/19 00:16:02 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/06 06:19:38 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+typedef unsigned char		t_char;
+typedef unsigned int		t_uint;
+typedef unsigned long		t_ulong;
+typedef unsigned long long	t_ullong;
 
 # include <unistd.h>
 # include <string.h>
@@ -28,6 +33,7 @@
 # include <pwd.h>
 # include <grp.h>
 # include "ft_math.h"
+# include "ft_log.h"
 # include "ft_files.h"
 # include "ft_gnl.h"
 # include "ft_display.h"

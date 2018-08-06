@@ -6,11 +6,11 @@
 #    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/06/01 15:50:58 by piquerue         ###   ########.fr        #
+#    Updated: 2018/08/06 06:14:33 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = lem-in
+NAME = libft.a
 
 CFLAGS = -Wall -Werror -Wextra -Ofast -Wunreachable-code
 
@@ -27,7 +27,8 @@ T = 0
 	@printf "\033[1A\033[KCompiling Source \033[32m%d\033[37m / \033[31m%d\033[37m\n" $(COUNT) $(COUNT_MAX)
 
 $(NAME): check display $(O)
-	@gcc -o $(NAME) $(O)
+	@ar rc $(NAME) $(O)
+	@ranlib $(NAME)
 	@printf "\033[1A\033[KCompiling Project \033[33m%s\033[37m\n" $(NAME)
 
 all: $(NAME)
