@@ -6,7 +6,7 @@
 #    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/08/06 06:49:07 by piquerue         ###   ########.fr        #
+#    Updated: 2018/08/07 00:05:47 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,12 @@ O = $(C:%.c=%.o)
 T = 0
 
 %.o: %.c $(H)
-	@gcc $(CFLAGS) -I Include/ -o $@ -c $<
+	@gcc $(CFLAGS) -I Include/ -o $@ -c $< &
 	$(call plus,$(COUNT), 1)
 	@printf "\033[1A\033[KCompiling Source \033[32m%d\033[37m / \033[31m%d\033[37m\n" $(COUNT) $(COUNT_MAX)
 
 $(NAME): check display $(O)
+	@sh .sh_tool/grep_clang.sh
 	@ar rc $(NAME) $(O)
 	@ranlib $(NAME)
 	@printf "\033[1A\033[KCompiling Project \033[33m%s\033[37m\n" $(NAME)
