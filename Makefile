@@ -6,7 +6,7 @@
 #    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/08/07 07:32:46 by piquerue         ###   ########.fr        #
+#    Updated: 2018/08/07 07:48:01 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,9 @@ display:
 
 check:
 	@sh .sh_tool/check.sh
+
+git:
+	@sh .sh_tool/git.sh
 
 .PHONY : all clean fclean re $(NAME)
 
