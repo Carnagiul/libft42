@@ -6,13 +6,14 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 13:33:19 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/07 06:35:21 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 06:41:31 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup_from_to_offset(char *str, int min, int max, int offset)
+char		*ft_strdup_from_to_offset(char *str, int min, int max,
+		int offset)
 {
 	char	*ret;
 	int		i;
@@ -42,7 +43,7 @@ char		*ft_strdup_from_to(char *str, int min, int max)
 	return (ret);
 }
 
-char	*ft_strdup(char const *str)
+char		*ft_strdup(char const *str)
 {
 	char	*s;
 
