@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 07:04:55 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/07 07:23:14 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 07:24:54 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char		*ft_strsplit_regex(char *str, char split)
 	start = -1;
 	stop = -1;
 	i = -1;
-	while (str[++i] && stop >= 0)
+	while (str[++i] && stop <0)
 	{
 		if (str[i] == split && start >= 0)
 			stop = i;
@@ -48,6 +48,6 @@ char		*ft_strsplit_regex(char *str, char split)
 			start = i;
 	}
 	if (stop >= 0)
-		return (ft_strdup_from_to(str, start, stop));
+		return (ft_strdup_from_to(str, start + 1, stop));
 	return (NULL);
 }
