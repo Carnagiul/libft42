@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 07:04:55 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/07 07:11:57 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 07:19:57 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int			ft_strsplit_regex_exist(char *str, char split)
 	{
 		if (str[i] == split && start >= 0)
 			stop = i;
-		if (str[i] == split)
+		if (str[i] == split && start == -1)
 			start = i;
 	}
 	return ((stop >= 0) ? 0 : 1);
