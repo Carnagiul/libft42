@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 20:37:22 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/07 07:08:21 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 07:11:38 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char	*ft_strrchr(char const *str, int c);
 char	*ft_string_capitalize(char *str);
 char	*ft_reverse(char *str);
 char	*ft_strsplit_regex(char *str, char split);
+int		ft_strsplit_regex_exist(char *str, char split);
 
 #endif
