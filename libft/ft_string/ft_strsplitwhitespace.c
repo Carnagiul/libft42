@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 05:47:10 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/07 05:47:11 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 06:12:59 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char			**ft_strsplitwhitespace(char const *s)
 	if (!s)
 		return (0);
 	nbword = ft_nbword(s);
-	tab = (char **)malloc(sizeof(char *) * (nbword + 1));
+	tab = (char **)ft_malloc(sizeof(char *) * (nbword + 1));
 	if (!tab)
 		return (NULL);
 	while (nbword--)

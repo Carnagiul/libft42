@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 20:37:22 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/07 05:47:41 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/08/07 06:26:23 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	**ft_strsplitwhitespace(char const *s);
 char	*ft_strstr(char const *str, char const *to_find);
 char	*ft_strnstr(char const *str, char const *to_find, size_t len);
 char	*ft_strdup(char const *str);
+char	*ft_strdup_from_to(char *str, int min, int max);
+char	*ft_strdup_from_to_offset(char *str, int min, int max, int offset);
 char	*ft_strnew(size_t size);
 int		ft_strnequ(char const *s1, char const *s2, size_t len);
 int		ft_strequ(char const *s1, char const *s2);
