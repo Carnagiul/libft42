@@ -6,7 +6,7 @@ if [ "$result" == Y ] || [ "$result" == O ]; then
 	echo "Quel est le commentaire pour le push?"
 	read comment
 	git add -A
-	git commit -m "$result"
+	git commit -m "$comment"
 	git push
 	echo "Le push est bien envoyer"
 fi
