@@ -6,7 +6,7 @@
 #    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/08/07 05:49:01 by piquerue         ###   ########.fr        #
+#    Updated: 2018/08/07 07:32:46 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,21 +58,6 @@ display:
 check:
 	@sh .sh_tool/check.sh
 
-test:
-	@printf "%d fichier .c trouver" $(COUNT)
-
-music_start:
-	@afplay ./ressources/music/music.mp3 &
-
-music_end:
-	@say -v thomas Fin de la compilation Merci d\'avoir patienter
-	@killall afplay
-
 .PHONY : all clean fclean re $(NAME)
-
-
-
-
-
 
 #@printf "\033[1A\033[KCompiling Source \033[32m%s\033[37m =====> \033[31m%s\033[37m\n" $< $@
