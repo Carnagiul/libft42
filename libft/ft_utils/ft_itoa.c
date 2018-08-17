@@ -12,6 +12,18 @@
 
 #include "libft.h"
 
+static char	*ft_itoa_free_return(char *str)
+{
+	ft_strdel(&str);
+	return (ft_strdup("0"));
+}
+
+static char	*ft_itoa_free_return_min(char *str)
+{
+	ft_strdel(&str);
+	return (ft_strdup("-2147483648"));
+}
+
 char		*ft_itoa(int nb)
 {
 	char	*str;
@@ -23,11 +35,11 @@ char		*ft_itoa(int nb)
 	if (!str)
 		return (ft_strdup("0"));
 	if (nb == 0)
-		return (ft_strdup("0"));
+		return (ft_itoa_free_return(str));
 	i = ft_pow(nb);
 	str[i--] = '\0';
 	if (-2147483648 == nb)
-		return (ft_strdup("-2147483648"));
+		return (ft_itoa_free_return_min(str));
 	if (n < 0)
 		n = -n;
 	while (n != 0)
