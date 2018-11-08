@@ -6,7 +6,7 @@
 #    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/11/08 14:28:15 by piquerue         ###   ########.fr        #
+#    Updated: 2018/11/08 14:36:05 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(NAME): check display $(O)
 all: $(NAME)
 
 install:
-	@if [ $(BIN) = 0 ]; then sh .sh_tool/grep_clang.sh; ar rc $(NAME) $(O); ranlib $(NAME); else echo "Projet is compiled"; fi
+	@if [ $(BIN) = 0 ]; then bash .sh_tool/grep_clang.sh; ar rc $(NAME) $(O); ranlib $(NAME); else echo "Projet is compiled"; fi
 	@$(eval BIN=1)
 
 clean: display
@@ -58,10 +58,10 @@ display:
 	@bash .sh_tool/display.sh $(PROJECT)
 
 check:
-	@sh .sh_tool/check.sh
+	@bash .sh_tool/check.sh
 
 git:
-	@sh .sh_tool/git.sh
+	@bash .sh_tool/git.sh
 
 .PHONY : all clean fclean re $(NAME)
 
