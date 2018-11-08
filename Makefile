@@ -6,13 +6,15 @@
 #    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/08/07 07:57:31 by piquerue         ###   ########.fr        #
+#    Updated: 2018/11/08 13:49:34 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+PROJECT = Libft
 
-CFLAGS = -Wall -Werror -Wextra -Ofast -Wunreachable-code
+
+CFLAGS = -Ofast -Wunreachable-code
 LIBFT = libft
 C = $(shell find . -type f | grep "\.c")
 COUNT = $(shell find . -type f | grep "\.o" | wc -l | tr -d '[:space:]')
@@ -53,7 +55,7 @@ fclean: clean
 re: fclean all
 
 display:
-	@sh .sh_tool/display.sh
+	@bash .sh_tool/display.sh $(PROJECT)
 
 check:
 	@sh .sh_tool/check.sh
