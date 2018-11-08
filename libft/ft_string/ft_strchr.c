@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 20:19:48 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/18 20:34:47 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/08 14:32:44 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(char const *str, int c)
 {
-	while (*str != 0 & *str != (char)c)
+	while ((*str != 0) & (*str != (char)c))
 		str++;
 	return ((*str != c) ? NULL : (char *)str);
 }

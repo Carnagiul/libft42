@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 21:31:00 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/18 20:31:43 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/08 14:30:06 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,12 @@ static char			*ft_check_it(char *str, char *base_str, int nb, int base)
 char				*ft_itoa_base(int nb, int base)
 {
 	char			*str;
-	int				n;
 	char			*base_str;
 
 	if (base >= 2 && base <= 16)
 		base_str = ft_base(base);
 	else
 		return ("");
-	n = nb;
 	str = (char *)malloc(sizeof(char) * (ft_pow_base(nb, base) + 1));
 	if (!str)
 		return (0);

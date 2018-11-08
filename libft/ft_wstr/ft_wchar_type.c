@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 22:19:09 by piquerue          #+#    #+#             */
-/*   Updated: 2018/05/18 22:20:09 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/08 14:27:48 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,11 @@ void		ft_unix_string_display_put_struct(t_unix_char_limit l)
 {
 	int		min;
 	int		max;
+	int		w;
 
 	min = l.min;
 	max = l.max;
+	w = 0;
 	while (min < max)
 	{
 		if (ft_unix_char_is_display_ii(min) == 1)
@@ -60,7 +62,7 @@ void		ft_unix_string_display_put_struct(t_unix_char_limit l)
 			ft_unix_string_display_iii(min);
 		if (ft_unix_char_is_display_iv(min) == 1)
 			ft_unix_string_display_iv(min);
-		write(1, "\t", 1);
+		w += write(1, "\t", 1);
 		min++;
 	}
 }

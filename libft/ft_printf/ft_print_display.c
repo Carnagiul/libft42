@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 00:29:23 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/30 03:39:53 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/08 14:31:54 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void		ft_putwstr(const wchar_t *str, t_print *print)
 {
 	int		i;
-	int		writed;
 
-	writed = 0;
 	i = 0;
 	while (str[i])
 	{

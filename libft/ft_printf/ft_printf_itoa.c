@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 06:42:48 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/30 04:47:45 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/08 14:30:50 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static unsigned long long		ft_printf_itoa_next(t_print *print,
 		cc = (unsigned long long)va_arg(*vl, intmax_t);
 	else
 		cc = (unsigned int)va_arg(*vl, intmax_t);
-	return ((cc == 0) ? hhh : cc);
+	return ((cc == 0) ? (unsigned long long)hhh : cc);
 }
 
 void							ft_printf_itoa(t_print *print,
