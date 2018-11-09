@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_web_init_header.c                               :+:      :+:    :+:   */
+/*   ft_printf_static.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 10:31:04 by piquerue          #+#    #+#             */
-/*   Updated: 2018/11/09 10:34:38 by piquerue         ###   ########.fr       */
+/*   Created: 2018/11/09 15:27:16 by piquerue          #+#    #+#             */
+/*   Updated: 2018/11/09 15:28:06 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_web_init_header(char *title)
+#ifndef FT_PRINTF_STATIC_H
+# define FT_PRINTF_STATIC_H
+
+typedef struct		s_ft_printf_static
 {
-	ft_printf("<html>\n");
-	ft_printf("\t<head>\n");
-	ft_printf("\t\t<meta charset='utf-8'>\n");
-	ft_printf("\t\t<title>%s</title>\n");
-	ft_printf("\t</head>\n");
-}
+	char			str[2048];
+	int				position_str;
+	int				position;
+	int				printed;
+	int				total_printed;
+}					t_ft_printf_static;
+
+int		ft_printf_static(char *fmt, ...);
+int		ft_printf_static_fd(int fd, char *fmt, va_list lst);
+
+#endif

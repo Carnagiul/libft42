@@ -6,7 +6,7 @@
 /*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 16:01:37 by piquerue          #+#    #+#             */
-/*   Updated: 2018/08/07 00:02:39 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/09 15:28:50 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef unsigned long long	t_ullong;
 # include "ft_utils.h"
 # include "ft_string.h"
 # include "ft_printf.h"
+# include "ft_printf_static.h"
 # include "ft_wstr.h"
 
 #endif
