@@ -6,7 +6,7 @@
 /*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 15:32:00 by piquerue          #+#    #+#             */
-/*   Updated: 2018/11/09 15:32:41 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/14 14:49:04 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			main(void)
 {
 
-	ft_printf_static("Je suis une schtroumpfette\n");
+	ft_printf_static("Je suis une schtroumpfette %% \n");
 
 	return (0);	
 }
