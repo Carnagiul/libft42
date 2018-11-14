@@ -6,11 +6,45 @@
 /*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:34:56 by piquerue          #+#    #+#             */
-/*   Updated: 2018/11/09 15:46:57 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/14 14:46:17 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int		ft_printf_static_percent(t_ft_printf_static *ptf)
+{
+	ptf->str[ptf->position++] = '%';
+	return (0);
+}
+
+int		ft_printf_static_delimitor(char *fmt, t_ft_printf_static *ptf)
+{
+	if (c == '%')
+		return (ft_printf_static_percent(ptf));
+	return (1);
+}
+
+int		ft_printf_static_research(char *fmt, t_ft_printf_static *ptf)
+{
+	if (str[ptf->position_str] == '%')
+	{
+		ptf->position_str++;
+		while (fmt[ptf->position_str])
+		{
+			if (ft_printf_static_delimitor(fmt, ptf) == 0)
+				return (0);
+			fmt->position_str++;
+		}
+	}
+	else
+	{
+		ptf->str[ptf->position++] = fmt[ptf->position_str++];
+	}
+	return (0);
+}
+
+
 
 void	ft_printf_static_print(int fd, t_ft_printf_static *ptf)
 {
@@ -33,12 +67,9 @@ int		ft_printf_static_fd(int fd, char *fmt, va_list lst)
 	ptf.printed = 0;
 	while (fmt[ptf.position_str])
 	{
-		ptf.str[ptf.position] = fmt[ptf.position_str];
+		ft_printf_static_research(fmt, &ptf);
 		if (ptf.position == 2048)
 			ft_printf_static_print(fd, &ptf);
-		else
-			ptf.position++;
-		ptf.position_str++;
 	}
 	if (ptf.position > 0)
 		ft_printf_static_print(fd, &ptf);
