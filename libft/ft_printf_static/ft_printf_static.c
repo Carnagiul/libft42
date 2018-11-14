@@ -6,7 +6,7 @@
 /*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:34:56 by piquerue          #+#    #+#             */
-/*   Updated: 2018/11/14 14:51:02 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/14 16:51:26 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,23 @@ int		ft_printf_static_percent(t_ft_printf_static *ptf)
 	return (0);
 }
 
+int		ft_printf_static_char(t_ft_printf_static *ptf)
+{
+	int c;
+
+	c = va_arg(ptf->actual, int);
+	c %= 255;
+	ptf->str[ptf->position++] = c;
+	ptf->position_str++;
+	return (0);
+}
+
 int		ft_printf_static_delimitor(char *fmt, t_ft_printf_static *ptf)
 {
 	if (fmt[ptf->position_str] == '%')
 		return (ft_printf_static_percent(ptf));
+	if (fmt[ptf->position_str] == 'c')
+		return (ft_printf_static_char(ptf));
 	return (1);
 }
 
@@ -66,6 +79,9 @@ int		ft_printf_static_fd(int fd, char *fmt, va_list lst)
 	ptf.position_str = 0;
 	ptf.total_printed += ptf.printed;
 	ptf.printed = 0;
+	va_copy(ptf.actual, lst);
+	va_copy(ptf.mem, lst);
+	va_copy(ptf.cpy, lst);
 	while (fmt[ptf.position_str])
 	{
 		ft_printf_static_research(fmt, &ptf);
@@ -75,6 +91,10 @@ int		ft_printf_static_fd(int fd, char *fmt, va_list lst)
 	if (ptf.position > 0)
 		ft_printf_static_print(fd, &ptf);
 	(void)lst;
+	va_end(ptf.actual);
+	va_end(ptf.cpy);
+	va_end(ptf.mem);
+	va_end(lst);
 	return (ptf.printed);
 }
 

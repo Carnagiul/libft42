@@ -6,7 +6,7 @@
 /*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 15:27:16 by piquerue          #+#    #+#             */
-/*   Updated: 2018/11/09 15:28:06 by piquerue         ###   ########.fr       */
+/*   Updated: 2018/11/14 16:45:48 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ typedef struct		s_ft_printf_static
 	int				position;
 	int				printed;
 	int				total_printed;
+	va_list			actual;
+	va_list			cpy;
+	va_list			mem;
 }					t_ft_printf_static;
 
 int		ft_printf_static(char *fmt, ...);
