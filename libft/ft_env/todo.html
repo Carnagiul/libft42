@@ -1,0 +1,54 @@
+<?php
+
+$array = array(
+	array(
+		name => "ft_ls | ls",
+		id => "0",
+		descr => "Ajout de ft_ls | ls en lecture seule",
+		termine => "0%"
+	)
+);
+
+?>
+<html>
+	<body>
+		<table>
+			<tr>
+				<td>
+					#id
+				</td>
+				<td>
+					#name
+				</td>
+				<td>
+					#descr
+				</td>
+				<td>
+					#termine
+				</td>
+			</tr>
+			<?php
+
+			foreach($array as $row)
+			{
+				?>
+			<tr>
+				<?php
+					foreach($row as $key => $value)
+					{
+						?>
+				<td>
+						<?php
+							$value;
+						?>
+				</td>
+					}
+				?>
+			</tr>
+				<?php
+			}
+
+			?>
+		</table>
+	</body>
+</html>
