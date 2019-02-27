@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:34:56 by piquerue          #+#    #+#             */
-/*   Updated: 2019/02/27 14:33:00 by user             ###   ########.fr       */
+/*   Updated: 2019/02/27 14:55:12 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_printf_static_print(int fd, t_ft_printf_static *ptf)
 	while (ptf->position < old)
 		ptf->str[ptf->position++] = 0;
 	ptf->position = 0;
+	printf("\nJe suis passer par ici\n");
 }
 
 int		ft_printf_static_percent(t_ft_printf_static *ptf)
