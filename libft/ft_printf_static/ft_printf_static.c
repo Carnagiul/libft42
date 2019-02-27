@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_static.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:34:56 by piquerue          #+#    #+#             */
-/*   Updated: 2018/12/21 14:12:54 by piquerue         ###   ########.fr       */
+/*   Updated: 2019/02/27 14:33:00 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,17 @@ int		ft_printf_static_long_string(t_ft_printf_static *ptf)
 	{
 		i++;
 	}
-
-	return ((int)(ret = strlen));
+	ret = (int)str_len;
+	return ((int)ret);
 }
 
 int		ft_printf_static_string(t_ft_printf_static *ptf)
 {
-	int		*str;
+	char	*str;
 	size_t	ret;
 	size_t	str_len;
 
-	str = va_arg(ptf->actual, int *);
+	str = va_arg(ptf->actual, char *);
 	str_len = ft_strlen((char *)str);
 	if (ptf->position + str_len >= 2048)
 	{

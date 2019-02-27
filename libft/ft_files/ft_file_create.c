@@ -22,7 +22,7 @@ static inline char	*ft_string_concat(char *str1, char *str2)
 	return (ret);
 }
 
-void				ft_files_create(char *path, char *filename,
+int					ft_files_create(char *path, char *filename,
 			char *filecontent)
 {
 	struct dirent	*files;
