@@ -48,14 +48,14 @@ int		ft_printf_static_long_string(t_ft_printf_static *ptf)
 	int		*str;
 	size_t	ret;
 	size_t	str_len;
-	int		*ext_str;
-	int		i;
+	// int		*ext_str;
+	size_t	i;
 
 	i = 0;
 	ret = 0;
 	str = va_arg(ptf->actual, int *);
 	str_len = ft_strlen((char *)str);
-	ext_str = (int *)ft_malloc(sizeof(int) * (str_len * 4));
+	// ext_str = (int *)ft_malloc(sizeof(int) * (str_len * 4));
 	while (i < str_len)
 	{
 		i++;
