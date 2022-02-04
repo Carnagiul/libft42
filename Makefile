@@ -10,32 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-PROJECT = Libft
+NAME = project.exe
+PROJECT = Project.exe
 
 
 CFLAGS = -Wall -Werror -Wextra -Ofast -Wunreachable-code
-LIBFT = libft
-C = $(shell find . -type f | grep "\.c")
-COUNT = $(shell find . -type f | grep "\.o" | wc -l | tr -d '[:space:]')
-COUNT_MAX = $(shell find . -type f | grep "\.c" | wc -l | tr -d '[:space:]')
-H = $(shell find . -type f | grep "\.h")
-O = $(C:%.c=%.o)
-T = 0
-MODIFS_C = $(shell find . | grep "libft42.a" | wc -l | tr -d '[:space:]')
-BIN = $(shell find . | grep $(NAME) | wc -l | tr -d '[:space:]')
+LIBRARIES = $(shell find . -type f | grep "\.a")
+BIN = $(shell find . -type f | grep $(NAME) | wc -l | tr -d '[:space:]')
+BASE_PATH = $(shell pwd)
 
-
-%.o: %.c $(H)
-	@if [ $(BIN) = 1 ]; then rm -rf $(NAME); fi
-	$(eval BIN=0)
-	@gcc $(CFLAGS) -I Include/ -o $@ -c $< &
-	$(call plus,$(COUNT), 1)
-	$(eval MODIFS_C=$(COUNT))
-	@printf "Compiling Source \033[32m%d\033[37m / \033[31m%d\033[37m\n" $(COUNT) $(COUNT_MAX)
-
-$(NAME): check display $(O)
-	@if [ $(MODIFS_C) > 0 ]; then make install; fi
+$(NAME): check display
 	@if [ $(BIN) = 0 ]; then make install; fi
 	@if [ $(BIN) = 1 ]; then echo "$(NAME) is compiled"; fi
 
@@ -44,13 +28,16 @@ $(NAME): check display $(O)
 all: $(NAME)
 
 install:
-	@if [ $(BIN) = 0 ]; then bash .sh_tool/grep_clang.sh; ar rc $(NAME) $(O); ranlib $(NAME); else echo "Projet is compiled"; fi
+	@bash .sh_tool/makefiles/compile.sh
+	if [ $(BIN) = 0 ]; then bash .sh_tool/grep_clang.sh; gcc -o $(NAME) main.c -L $(shell find . -type f | grep "\.a") -I Include/; else echo "Projet is compiled"; fi
 	@$(eval BIN=1)
 
 clean: display
-	@rm -rf $(O)
+	@bash .sh_tool/makefiles/clean.sh
+
 fclean: clean
 	@rm -f $(NAME)
+	@bash .sh_tool/makefiles/fclean.sh
 
 re: fclean all
 
@@ -63,6 +50,6 @@ check:
 git:
 	@bash .sh_tool/git.sh
 
-.PHONY : all clean fclean re $(NAME)
+.PHONY : all clean fclean re $(NAME) test
 
 #@printf "\033[1A\033[KCompiling Source \033[32m%s\033[37m =====> \033[31m%s\033[37m\n" $< $@

@@ -14,18 +14,5 @@
 
 void		ft_putnstr(const char *str, int len)
 {
-	int		i;
-
-	i = 0;
-	if (!str)
-		return ;
-	else
-	{
-		while (len > 0 && str[i])
-		{
-			len--;
-			ft_putchar(str[i]);
-			i++;
-		}
-	}
+	ft_putnstr_fd(str, len, 1);
 }

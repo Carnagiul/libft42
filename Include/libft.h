@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 16:01:37 by piquerue          #+#    #+#             */
-/*   Updated: 2018/11/09 15:28:50 by piquerue         ###   ########.fr       */
+/*   Updated: 2022/02/04 17:12:06 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ typedef unsigned long long	t_ullong;
 # include "ft_printf.h"
 # include "ft_printf_static.h"
 # include "ft_wstr.h"
+# include "ft_program.h"
 
 #endif

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_read.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 15:32:00 by piquerue          #+#    #+#             */
-/*   Updated: 2022/02/04 16:55:17 by piquerue         ###   ########.fr       */
+/*   Created: 2016/11/02 17:27:32 by piquerue          #+#    #+#             */
+/*   Updated: 2022/02/04 17:04:53 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				run(void)
+char *ft_read(int fd)
 {
-	ft_printf_static("Je suis une schtroumpfette \n %s \n", "Ceci es une seconde ligne qui forme avec l'ancienne moins de 2048 characteres!");
-	return ;
-}
+	int		ret;
+	char	buf;
+	int		i;
+	int		count;
+	char	*input;
 
-int					main(void)
-{
-	t_program		*program;
-
-	program = ft_create_program();
-	program->callback = &run;
-	while (program->need_stop == 0)
+	input = ft_strnew(1);
+	count = 1;
+	i = 0;
+	while ((ret = read(fd, &buf, 1)) && buf != '\n')
 	{
-		program->callback();
+		*(input + i++) = buf;
+		input = ft_mem_realloc(input, count, count + 1);
+		count++;
 	}
-	return program->exit_code;
+	*(input + i) = '\0';
+	if (!ret)
+		free(input);
+	return input;
 }

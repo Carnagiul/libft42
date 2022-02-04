@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_program.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 16:19:48 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/18 20:22:50 by piquerue         ###   ########.fr       */
+/*   Created: 2022/02/04 16:35:14 by piquerue          #+#    #+#             */
+/*   Updated: 2022/02/04 16:53:40 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PROGRAM_H
+# define FT_PROGRAM_H
 
-void	ft_putstr_fd(char const *str, int fd)
-{
-	if (write(fd, str, ft_strlen(str)))
-	{
-		
-	}
-}
+typedef struct s_program {
+	void			(*callback)(void);
+	int				need_stop;
+	int				exit_code;	
+}					t_program;
+
+t_program			*ft_create_program(void);
+
+#endif

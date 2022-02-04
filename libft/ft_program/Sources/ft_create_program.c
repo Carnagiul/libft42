@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_create_program.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 16:19:48 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/18 20:22:50 by piquerue         ###   ########.fr       */
+/*   Created: 2022/02/04 16:05:20 by piquerue          #+#    #+#             */
+/*   Updated: 2022/02/04 16:44:56 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *str, int fd)
+t_program			*ft_create_program(void)
 {
-	if (write(fd, str, ft_strlen(str)))
-	{
-		
-	}
+	t_program		*prog;
+	
+	prog = (t_program *)ft_malloc(sizeof(t_program));
+	prog->exit_code = 0;
+	prog->need_stop = 0;
+	return prog;
 }
