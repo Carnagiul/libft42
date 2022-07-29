@@ -3,20 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: piquerue <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/02 14:20:07 by piquerue          #+#    #+#              #
-#    Updated: 2018/11/08 14:36:05 by piquerue         ###   ########.fr        #
+#    Updated: 2022/02/10 19:29:01 by piquerue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = project.exe
 PROJECT = Project.exe
 
+LIBFT = libft.a
 
 CFLAGS = -Wall -Werror -Wextra -Ofast -Wunreachable-code
 LIBRARIES = $(shell find . -type f | grep "\.a")
 BIN = $(shell find . -type f | grep $(NAME) | wc -l | tr -d '[:space:]')
+C = $(shell find ./libft -type f | grep "\.c")
+C2 = $(shell find ./project -type f | grep "\.c")
 BASE_PATH = $(shell pwd)
 
 $(NAME): check display
@@ -28,15 +31,15 @@ $(NAME): check display
 all: $(NAME)
 
 install:
-	@bash .sh_tool/makefiles/compile.sh
-	if [ $(BIN) = 0 ]; then bash .sh_tool/grep_clang.sh; gcc -o $(NAME) main.c -L $(shell find . -type f | grep "\.a") -I Include/; else echo "Projet is compiled"; fi
+	# @bash .sh_tool/makefiles/compile.sh
+	if [ $(BIN) = 0 ]; then bash .sh_tool/grep_clang.sh; gcc -o $(NAME) $(C) main.c -g -lpthread -I Include/; else echo "Projet is compiled"; fi
 	@$(eval BIN=1)
 
 clean: display
 	@bash .sh_tool/makefiles/clean.sh
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(LIBFT)
 	@bash .sh_tool/makefiles/fclean.sh
 
 re: fclean all
