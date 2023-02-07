@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_with_endline.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 16:19:48 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/18 20:22:50 by piquerue         ###   ########.fr       */
+/*   Created: 2016/11/02 16:19:06 by piquerue          #+#    #+#             */
+/*   Updated: 2022/02/04 17:00:09 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *str, int fd)
+void	ft_putstr_with_endline(char const *str)
 {
-	int i;
-
-	i = 0;
-	if (!str)
-		return ;
-	while (str[i] != '\0')
-		ft_putchar_fd(str[i++], fd);
+	ft_putstr_with_endline_fd(str, 1);
 }

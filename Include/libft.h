@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 16:01:37 by piquerue          #+#    #+#             */
-/*   Updated: 2018/11/09 15:28:50 by piquerue         ###   ########.fr       */
+/*   Updated: 2022/02/11 14:54:47 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ typedef unsigned long long	t_ullong;
 # include <time.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+# include <pthread.h>
+# include <math.h>
+# include <sys/time.h>
+
 # include <pwd.h>
 # include <grp.h>
 # include "ft_math.h"
@@ -40,10 +44,14 @@ typedef unsigned long long	t_ullong;
 # include "ft_delimiteur.h"
 # include "ft_memory.h"
 # include "ft_list.h"
-# include "ft_utils.h"
 # include "ft_string.h"
+# include "ft_utils.h"
 # include "ft_printf.h"
 # include "ft_printf_static.h"
 # include "ft_wstr.h"
+# include "ft_program.h"
+
+void			custom_timeout(t_program_callback *cb);
+void			custom_timeout_2(t_program_callback *cb);
 
 #endif

@@ -44,7 +44,12 @@ int					ft_files_create(char *path, char *filename,
 	concat = ft_string_concat(path, filename);
 	fd = open(concat, O_WRONLY|O_CREAT|O_TRUNC, 0644);
 	if (filecontent)
-		write(fd, filecontent, ft_strlen(filecontent));
+	{
+		if (!write(fd, filecontent, ft_strlen(filecontent)))
+		{
+			
+		}
+	}
 	close(fd);
 	ft_strdel(&concat);
 	free(files);

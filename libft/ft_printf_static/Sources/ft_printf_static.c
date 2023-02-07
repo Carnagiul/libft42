@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_static.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:34:56 by piquerue          #+#    #+#             */
-/*   Updated: 2019/02/27 14:55:12 by user             ###   ########.fr       */
+/*   Updated: 2022/02/10 19:29:26 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_printf_static_print(int fd, t_ft_printf_static *ptf)
 	while (ptf->position < old)
 		ptf->str[ptf->position++] = 0;
 	ptf->position = 0;
-	printf("\nJe suis passer par ici\n");
 }
 
 int		ft_printf_static_percent(t_ft_printf_static *ptf)
@@ -48,14 +47,14 @@ int		ft_printf_static_long_string(t_ft_printf_static *ptf)
 	int		*str;
 	size_t	ret;
 	size_t	str_len;
-	int		*ext_str;
-	int		i;
+	// int		*ext_str;
+	size_t	i;
 
 	i = 0;
 	ret = 0;
 	str = va_arg(ptf->actual, int *);
 	str_len = ft_strlen((char *)str);
-	ext_str = (int *)ft_malloc(sizeof(int) * (str_len * 4));
+	// ext_str = (int *)ft_malloc(sizeof(int) * (str_len * 4));
 	while (i < str_len)
 	{
 		i++;

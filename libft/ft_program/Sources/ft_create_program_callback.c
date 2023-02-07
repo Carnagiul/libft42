@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_malloc.c                                        :+:      :+:    :+:   */
+/*   ft_create_program_callback.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 22:23:11 by piquerue          #+#    #+#             */
-/*   Updated: 2018/05/18 22:23:12 by piquerue         ###   ########.fr       */
+/*   Created: 2022/02/10 19:35:47 by piquerue          #+#    #+#             */
+/*   Updated: 2022/02/10 19:50:32 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_malloc(size_t size)
+t_program_callback			*ft_create_program_callback(void)
 {
-	void	*ret;
+	t_program_callback		*callback;
 
-	ret = malloc(size);
-	if (!ret)
-		exit(ft_printf("@RERROR@@: Can't malloc %llu object\n", size));
-	return (ret);
+	callback = (t_program_callback *)ft_malloc(sizeof(t_program_callback));	
+	callback->data_event = NULL;
+	callback->callback = NULL;
+	return callback;
 }

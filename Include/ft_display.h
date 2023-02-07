@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_display.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piquerue <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piquerue <piquerue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 20:03:27 by piquerue          #+#    #+#             */
-/*   Updated: 2016/12/19 00:20:15 by piquerue         ###   ########.fr       */
+/*   Updated: 2022/02/04 17:02:14 by piquerue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@ void				ft_putendl(char const *str);
 void				ft_putchar_fd(int c, int fd);
 void				ft_putchar(int c);
 void				ft_putnstr(const char *str, int len);
+void				ft_putnstr_fd(const char *str, int len, int fd);
+void				ft_putstr_with_endline(char const *str);
+void				ft_putstr_with_endline_fd(char const *str, int fd);
 
 #endif
